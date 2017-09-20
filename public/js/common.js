@@ -1,4 +1,4 @@
-define(['jquery','cookie'], function ($) {
+define(['jquery','template','cookie'], function ($,template) {
 
     /*NProgress.start();
 
@@ -40,7 +40,9 @@ define(['jquery','cookie'], function ($) {
     * */
      var data=$.cookie('data');
      data=data&&JSON.parse(data);
-     $('.aside .profile .avatar img').attr('src',data.tc_avatar);
-     $('.aside .profile h4').html(data.tc_name);
-
+     /*$('.aside .profile .avatar img').attr('src',data.tc_avatar);
+     $('.aside .profile h4').html(data.tc_name);*/
+    var tpl='<div class="avatar img-circle"> <img src="{{tc_avatar}}"> </div> <h4>{{tc_name}}</h4>';
+    var html=template.render(tpl,data);
+    $(".aside .profile").html(html);
 })
