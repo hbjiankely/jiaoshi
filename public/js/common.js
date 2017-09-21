@@ -36,7 +36,8 @@ define(['jquery','template','cookie'], function ($,template) {
 
     //获取cookie,变更头像用户
     /*
-    * 这里写的时候出现了一个bug，解决方式是，把整段代码从点击退出代码之上，挪到最下面
+    * 这里写的时候出现了一个bug，data是undefind,解决方式是，先把整段代码注释掉，登录一次后再解开
+    * 因为cookie是会话存储，只要浏览器不关闭或者不清除cache(缓存),就不会报错
     * */
      var data=$.cookie('data');
      data=data&&JSON.parse(data);
