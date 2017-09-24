@@ -16,8 +16,8 @@ define(['jquery'], function ($) {
            }
            return result;
        },
-       setMenu: function (path) {
-           $(".aside .navs a:[href="+path+"]").addClass('active');
+       setMenu:function (path) {
+           $(".aside .navs a[href='"+path+"']").addClass('active');
        }
    }
 });
