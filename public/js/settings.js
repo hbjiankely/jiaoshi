@@ -10,6 +10,7 @@ define(['jquery','template','uploadify','region'], function ($,template) {
             $('#settingsInfo').html(html);
 
             //处理头像上传
+            //处理bug,因为谷歌浏览器59版本，flash被禁用，需要更改设置
             $("#upfile").uploadify({
                 width:'120',
                 height:"120",
@@ -19,12 +20,8 @@ define(['jquery','template','uploadify','region'], function ($,template) {
                 uploader:'/api/uploader/avatar',
                 fileObjName:'tc_avatar',
                 onUploadSuccess: function (a,b) {
-                    console.log(123);
                     var obj=JSON.parse(b);
                     $(".preview img").attr('src',obj.result.path);
-                },
-                onUploadError: function (a) {
-                    console.log(a);
                 }
             });
 
