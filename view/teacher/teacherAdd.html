@@ -35,7 +35,7 @@
               <input type="hidden" name='tc_id' value='{{tc_id}}'/>
             {{/if}}
             <div class="form-group">
-              <label for="" class="col-xs-3 control-label">姓名</label>
+              <label class="col-xs-3 control-label">姓名</label>
               <div class="col-xs-4">
                 <input data-required data-description='tcName' data-describedby='tcNameInfo' type="text" name='tc_name' value='{{tc_name}}' class="form-control input-sm" placeholder="讲师名称">
               </div>
@@ -43,7 +43,7 @@
             </div>
             {{if !tc_id}}
             <div class="form-group">
-              <label for="" class="col-xs-3 control-label">密码</label>
+              <label class="col-xs-3 control-label">密码</label>
               <div class="col-xs-4">
                 <input data-required data-description='tcPass' data-describedby='tcPassInfo' type="password" name='tc_pass' class="form-control input-sm">
               </div>
@@ -51,14 +51,14 @@
             </div>
             {{/if}}
             <div class="form-group">
-              <label for="" class="col-xs-3 control-label">入职时间</label>
+              <label class="col-xs-3 control-label">入职时间</label>
               <div class="col-xs-4">
                 <input data-required data-description='tcJoinDate' data-describedby='tcJoinDateInfo' data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd' type="text" name='tc_join_date' value='{{tc_join_date}}' class="form-control input-sm">
               </div>
               <div class="col-xs-2" id='tcJoinDateInfo'></div>
             </div>
             <div class="form-group">
-              <label for="" class="col-xs-3 control-label">类型</label>
+              <label class="col-xs-3 control-label">类型</label>
               <div class="col-xs-2">
                 <select name="tc_type" class="form-control input-sm">
                   <option value="1" {{if tc_type==1}}selected{{/if}} >讲师</option>
@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="" class="col-xs-3 control-label">性别</label>
+              <label class="col-xs-3 control-label">性别</label>
               <div class="col-xs-4">
                 <label class="radio-inline">
                   <input type="radio" value='0' name='tc_gender' {{if tc_gender==0}}checked{{/if}} > 男
