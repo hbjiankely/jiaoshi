@@ -30,28 +30,32 @@
         </ol>
         <div class="teacher-add">
           <form id='teacherForm' class="form-horizontal col-xs-offset-2">
+            <!--这里因为value值直接等于tc_id，导致编辑功能没有效果-->
             {{if tc_id}}
               <input type="hidden" name='tc_id' value='{{tc_id}}'/>
             {{/if}}
             <div class="form-group">
               <label for="" class="col-xs-3 control-label">姓名</label>
               <div class="col-xs-4">
-                <input type="text" name='tc_name' value='{{tc_name}}' class="form-control input-sm" placeholder="讲师名称">
+                <input data-required data-description='tcName' data-describedby='tcNameInfo' type="text" name='tc_name' value='{{tc_name}}' class="form-control input-sm" placeholder="讲师名称">
               </div>
+              <div class="col-xs-2" id='tcNameInfo'></div>
             </div>
             {{if !tc_id}}
             <div class="form-group">
               <label for="" class="col-xs-3 control-label">密码</label>
               <div class="col-xs-4">
-                <input type="password" name='tc_pass' class="form-control input-sm">
+                <input data-required data-description='tcPass' data-describedby='tcPassInfo' type="password" name='tc_pass' class="form-control input-sm">
               </div>
+              <div class="col-xs-2" id='tcPassInfo'></div>
             </div>
             {{/if}}
             <div class="form-group">
               <label for="" class="col-xs-3 control-label">入职时间</label>
               <div class="col-xs-4">
-                <input data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd' type="text" name='tc_join_date' value='{{tc_join_date}}' class="form-control input-sm">
+                <input data-required data-description='tcJoinDate' data-describedby='tcJoinDateInfo' data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd' type="text" name='tc_join_date' value='{{tc_join_date}}' class="form-control input-sm">
               </div>
+              <div class="col-xs-2" id='tcJoinDateInfo'></div>
             </div>
             <div class="form-group">
               <label for="" class="col-xs-3 control-label">类型</label>
@@ -75,7 +79,7 @@
             </div>
             <div class="form-group">
               <div class="col-xs-7">
-                <input type="button" id='teacherBtn' value='提交' class="btn btn-success btn-sm pull-right"/>
+                <input type="submit" id='teacherBtn' value='提交' class="btn btn-success btn-sm pull-right"/>
               </div>
             </div>
           </form>
