@@ -1,16 +1,33 @@
-define(['jquery','template','util'], function ($,template,util) {
-    //菜单导航高亮显示
+define(['jquery','template','util','uploadify'], function ($,template,util) {
+    //鑿滃崟瀵艰埅楂樹寒鏄剧ず
     util.setMenu('/course/courseadd');
-    //获取ID
+    //鑾峰彇ID
     var csId=util.qs('cs_id');
-    //发送请求，获取数据
+    //鍙戦�佽姹傦紝鑾峰彇鏁版嵁
     $.ajax({
         type:'get',
         url:'/api/course/picture',
         data:{cs_id:csId},
         dataType:'json',
         success: function (data) {
-            console.log(data);
+            var html=template('pictureTpl',data.result);
+            $("#pictureInfo").html(html);
+            //涓婁紶灏侀潰鍥剧墖
+            $('#myfile').uploadify({
+                width:80,
+                height:'auto',
+                buttonText:'閫夋嫨鏂囦欢',
+                itemTemplate:'<span></span>',
+                buttonClass:'btn btn-success btn-sm',
+                swf:'/public/assets/uploadify/uploadify.swf',
+                uploader:'/api/uploader/cover',
+                fileObjName:'cs_cover_original',
+                formData:{cs_id:csId},
+                onUploadSuccess: function (a,b,c) {
+                    var obj=JSON.parse(b.trim());
+                    $(".preview img").attr('src',obj.result.path);
+                }
+            })
         }
     })
 })
