@@ -9,6 +9,7 @@ require.config({
         teacher:'../js/teacher',
         teacherAdd:'../js/teacher-add',
         bootstrap:'bootstrap/js/bootstrap.min',
+        jcrop:'jcrop/js/Jcrop',
         util:'../js/util',
         datepicker:'bootstrap-datepicker/js/bootstrap-datepicker.min',
         language:'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
@@ -22,7 +23,8 @@ require.config({
         courselist:'../js/course-list',
         courseadd:'../js/course-add',
         basic:'../js/course-basic',
-        coursepicture:'../js/course-picture'
+        coursepicture:'../js/course-picture',
+        lesson:'../js/course-lesson'
     },
     shim:{
         bootstrap:{
@@ -39,6 +41,9 @@ require.config({
         },
         ckeditor:{
             exports:'CKEDITOR'
+        },
+        jcrop:{
+            deps:['jquery']
         }
     }
 })
