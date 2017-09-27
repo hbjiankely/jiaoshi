@@ -1,4 +1,4 @@
-define(['jquery','template','util','bootstrap'], function ($,template,util) {
+define(['jquery','template','util','status','bootstrap'], function ($,template,util) {
     //当前高亮显示
     util.setMenu(location.pathname);
     $.ajax({

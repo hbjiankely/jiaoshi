@@ -24,7 +24,10 @@ require.config({
         courseadd:'../js/course-add',
         basic:'../js/course-basic',
         coursepicture:'../js/course-picture',
-        lesson:'../js/course-lesson'
+        lesson:'../js/course-lesson',
+        status:'../js/status',
+        nprogress:'nprogress/nprogress',
+        echarts:'echarts/echarts.min'
     },
     shim:{
         bootstrap:{
